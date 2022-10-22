@@ -1,0 +1,21 @@
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 0;
+}
+
+.container-user-header {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.header-main {
+    background-color: var(--gray800);
+    height: 4rem;
+    margin-bottom: 2.188rem;
+}
+
+.title-main {
+    margin-top: 1.25rem;
+}
+

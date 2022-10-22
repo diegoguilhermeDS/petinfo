@@ -1,0 +1,47 @@
+.brand {
+    color: var(--brand100);
+}
+
+.alert {
+    color: var(--alert100);
+}
+
+.sucess {
+    color: var(--sucess100);
+}
+
+.gray-1 {
+    color: var(--gray100);
+}
+
+.gray-2 {
+    color: var(--gray200);
+}
+
+.gray-3 {
+    color: var(--gray300);
+}
+
+.gray-4 {
+    color: var(--gray400);
+}
+
+.gray-5 {
+    color: var(--gray500);
+}
+
+.gray-6 {
+    color: var(--gray600);
+}
+
+.gray-7 {
+    color: var(--gray700);
+}
+
+.gray-8 {
+    color: var(--gray800);
+}
+
+.gray-9 {
+    color: var(--gray900);
+}

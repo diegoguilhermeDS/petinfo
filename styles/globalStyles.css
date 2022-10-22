@@ -1,26 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 :root {
-  --brand100: "hsl(230, 57%, 50%)";
-  --brand200: "hsl(230, 68%, 54%)";
-  --gray100: "hsl(210, 11%, 15%)";
-  --gray200: "hsl(210, 10%, 23%)";
-  --gray300: "hsl(210, 9%, 31%)";
-  --gray400: "hsl(210, 7%, 56%)";
-  --gray500: "hsl(210, 11%, 71%)";
-  --gray600: "hsl(210, 16%, 93%)";
-  --gray700: "hsl(210, 17%, 95%)";
-  --gray800: "hsl(210, 17%, 98%)";
-  --gray900: "hsl(200, 100%, 99%)";
-  --alert100: "hsl(349, 57%, 50%)";
-  --alert200: "hsl(349, 69%, 55%)";
-  --sucess100: "hsl(162, 88%, 26%)";
+  --brand100: hsl(230, 57%, 50%);
+  --brand200: hsl(230, 68%, 54%);
+  --gray100: hsl(210, 11%, 15%);
+  --gray200: hsl(210, 10%, 23%);
+  --gray300: hsl(210, 9%, 31%);
+  --gray400: hsl(210, 7%, 56%);
+  --gray500: hsl(210, 11%, 71%);
+  --gray600: hsl(210, 16%, 93%);
+  --gray700: hsl(210, 17%, 95%);
+  --gray800: hsl(210, 17%, 98%);
+  --gray900: hsl(200, 100%, 99%);
+  --alert100: hsl(349, 57%, 50%);
+  --alert200: hsl(349, 69%, 55%);
+  --sucess100: hsl(162, 88%, 26%);
+  --opacity: hsla(0, 0%, 12%, 0.502);
+
+
+  --font-size-1: 2rem;
+  --font-size-2: 1.5rem;
+  --font-size-3: 1.25rem;
+  --font-size-4: 1rem;
+  --font-size-5: 0.875rem;
+
+  --font-weight-1: 600;
+  --font-weight-2: 500;
+  --font-weight-3: 400;
+
+  --bd-radius-1: 50%;
+  --bd-radius-2: 0.75rem;
+  --bd-radius-3: 0.5rem;
+  --bd-radius-4: 0.25rem;
+
+  --btn-h-1: 2.375rem;
+  --btn-h-2: 2rem;
+
+  --inp-h-1: 2.75rem;
 }
 
-body {
-  font-family: "Inter, sans-serif";
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  gap: 2.5rem;
 }

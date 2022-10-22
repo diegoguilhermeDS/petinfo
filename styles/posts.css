@@ -1,0 +1,56 @@
+.list-posts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding-bottom: 2rem;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.header-post {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-infor-post {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.img-user-post {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    border-radius: var(--bd-radius-1);
+}
+
+.form-post {
+    display: flex;
+    gap: 0.625rem;
+}
+
+.button-acessar-post {
+    background-color: transparent;
+    border: none;
+    width: 9rem;
+    cursor: pointer;
+}
+
+.button-acessar-post:hover {
+    color: var(--brand200);
+    text-decoration-line: underline;
+}
+
+
+.content-post {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.25rem;
+}
