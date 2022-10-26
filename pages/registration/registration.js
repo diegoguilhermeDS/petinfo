@@ -3,7 +3,7 @@ import { register } from "../../scripts/api.js";
 const eventRegister = () => {
     const form = document.querySelector("form")
     const elements = [...form.elements]
-    const buttonLogin = elements[4]
+    const buttonRegister = elements[4]
 
     elements.forEach(elem => {
         if (elem.tagName == "INPUT") {
@@ -11,10 +11,8 @@ const eventRegister = () => {
                 const listArrEmpty = elements.filter(elem => elem.value == "")
 
                 if (listArrEmpty.length <= 1) {
-                    buttonLogin.disabled = false
+                    buttonRegister.disabled = false
                 }
-                console.log(listArrEmpty.length <= 1)
-                
             })
         }
     })
@@ -30,7 +28,18 @@ const eventRegister = () => {
             }
         })
 
-        await register(body)
+        const textInforFail = document.getElementById('text-fail')
+
+        if (textInforFail !== null) {
+            textInforFail.remove()
+            const inputsAlert = document.querySelectorAll(".input-alert")
+
+            inputsAlert.forEach((input) => {
+                input.classList.remove("input-alert")
+            })
+        }
+
+        await register(body, buttonRegister)
         buttonLogin.innerHTML = `
             <img class="icon-search" src="/assets/img/spinner.png" alt="icone de procura">
         `

@@ -19,7 +19,8 @@
 .button-blue:disabled {
     background-color: var(--brand200);
     border: 1px solid var(--brand200); 
-    cursor: auto;
+    opacity: 40%;
+    cursor: not-allowed;
 }
 .button-blue:hover {
     background-color: var(--brand200);

@@ -29,6 +29,17 @@ const eventLogin = () => {
             element.value = ''
         })
 
+        const textInforFail = document.getElementById('text-fail')
+
+        if (textInforFail !== null) {
+            textInforFail.remove()
+            const inputsAlert = document.querySelectorAll(".input-alert")
+
+            inputsAlert.forEach((input) => {
+                input.classList.remove("input-alert")
+            })
+        }
+
         await login(body, buttonLogin)
         buttonLogin.innerHTML = `
             <img class="icon-search" src="/assets/img/spinner.png" alt="icone de procura">

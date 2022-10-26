@@ -29,17 +29,14 @@ async function login(body, btn) {
             }, 4000)
             
         } else {
+            const response = await request.json()
             btn.disabled = true
             tooltip("Erro!", "Algo deu errado", "Certifique-se de ter preenchido todos os dados corretamente.")
 
             const form = document.querySelector("form")
             const elements = [...form.elements]
 
-            const textInforFail = document.getElementById('text-fail')
-
-            if (textInforFail !== null){
-                textInforFail.remove()
-            }
+            
 
             elements.forEach((element) => {
                 if (element.tagName == "INPUT") {
@@ -50,11 +47,11 @@ async function login(body, btn) {
                     if (element.id == "password") {
                         
 
-                        element.insertAdjacentHTML("afterend", "<p class='alert text-2' id='text-fail'>Email ou Senha inválido!</p>")
+                        element.insertAdjacentHTML("afterend", `<p class='alert text-2' id='text-fail'>${response.message}</p>`)
                     }
                 }
             })
-
+            
         }
 
     } catch (err) {
@@ -63,7 +60,7 @@ async function login(body, btn) {
 }
 
 
-async function register(body) {
+async function register(body, btn) {
     try {
         const request = await fetch(`${baseUrl}users/create`, {
             method: "POST",
@@ -81,7 +78,28 @@ async function register(body) {
             }, 4000)
 
         } else {
-            tooltip("Erro!", "Algo deu errado!")
+            const response = await request.json()
+            btn.disabled = true
+            tooltip("Erro!", "Algo deu errado", "Certifique-se de ter preenchido todos os dados corretamente.")
+
+            const form = document.querySelector("form")
+            const elements = [...form.elements]
+
+            
+
+            elements.forEach((element) => {
+                if (element.tagName == "INPUT") {
+                    element.classList.add("input-alert")
+
+
+
+                    if (element.id == "password") {
+                        
+
+                        element.insertAdjacentHTML("afterend", `<p class='alert text-2' id='text-fail'>${response.message}</p>`)
+                    }
+                }
+            })
         }
 
     } catch (err) {
@@ -175,10 +193,12 @@ async function deletePost(id){
 
         if (request.ok) {
             const response = await request.json()
-            
+
             const containerModalCurrent = document.querySelector(".container-modal")
 
             containerModalCurrent.remove()
+
+            tooltip("Sucesso!", `${response.message}`, "O post selecionado para exlusão foi deletado, a partir de agora não aparecerá no seu feed ")
             renderPosts()
 
             return response
